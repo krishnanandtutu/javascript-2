@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        #image{
+            width: 1000px;
+            height: 1000px;
+            
+            background-image:url('letsupload.jpg');
+        }
+    </style>
+</head>
+<body>
+    <div >
+          <ul>
+            <li  id = "image"> owl1</li>
+          
+          
+            <li id="owl2">owl2 </li>
+            <li id ="google" href="https://www.google.com/"> want to crack google interview </li>
+            
+          </ul>
+
+          
+    </div>
+    
+</body>
+<script>
+    // document.getElementById('image').onclick= function(){
+    //     alert('owl clicked');
+    // }
+
+    // attachEvent()
+    // jquery-on
+
+    // document.getElementById('image').addEventListener('click',function(){
+    //     alert("owl clicked again")
+    // })
+    // document.getElementById('image').addEventListener('click',function(e){
+    //     // alert("owl clicked again")
+    //     console.log(e);
+    // },false)
+
+    // type ,timestamp ,defaultprevented
+    // target ,toElement,srcElement,currentTarget,
+    // clientX,clientY,screenX,screenY
+    // altKey,ctrlkey,shiftKey,keycode
+
+    // document.getElementById('image').addEventListener('click',function(e){
+    //      console.log("click inside ul")
+    //  },false)// isme click inside ul hi aayega
+
+    //  document.getElementById('image').addEventListener('click',function(){
+    //      console.log("owl ")// isme qki false likhe h low to up jayaega means it 
+    //      // it will first print owl then print click inside ul
+
+    //      // but in case of  we havw wriiten true then flow will movw from top to bpttom menas 
+    //      // we can say first click inside ul then owl will be printed..
+
+    //      e.stopPropogation()// ab event bubble up hoke uoar nhi jayega ..
+    //  },false)
+
+
+    //  document.getElementById('google').addEventListener
+    //  ('click',function(e){
+    //         e.preventDefault();
+    //        // e.stopPropagation()
+    //        console.log('google clicked');
+    //  },false)
+ 
+    document.querySelector('#image').addEventListener
+    ('click',function(e){
+        console.log(e.target.parentNode);
+        let removeIt = e.target.parentNode;
+         //removeIt.remove()
+         removeIt.parentNode.removeChild(removeIt);
+    })
+
+
+
+       
+
+</script>
+</html>
